@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  chalice-app:
+    container_name: chalice-app
+    build:
+      context: ./chalice-app
+      dockerfile: dev.Dockerfile
+    ports:
+      - ${CHALICE_FORWORD_PORT:-8000}:${CHALICE_CONTAINER_PORT:-8000}
+    env_file:
+      - .env
+    tty: true
+
+  next-app:
+    container_name: next-app
+    build:
+      context: ./next-app
+      dockerfile: dev.Dockerfile
+    ports:
+      - ${NEXT_FORWARD_PORT:-3000}:${NEXT_CONTAINER_PORT:-3000}
+    env_file:
+      - .env
+    restart: "always"
