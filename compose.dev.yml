@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   chalice-app:
@@ -6,6 +6,7 @@ services:
     build:
       context: ./chalice-app
       dockerfile: dev.Dockerfile
+      target: ${CHALICE_STAGE_TARGET:-dev-main}
     ports:
       - ${CHALICE_FORWORD_PORT:-8000}:${CHALICE_CONTAINER_PORT:-8000}
     env_file:

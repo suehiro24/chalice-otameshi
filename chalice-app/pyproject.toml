@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "chalice-app"
+version = "0.1.0"
+description = ""
+authors = ["Suehiro24 <hayatasato.0@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+chalice = "^1.29.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+mypy = "^1.5.1"
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
