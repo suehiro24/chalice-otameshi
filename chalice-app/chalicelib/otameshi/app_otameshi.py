@@ -1,9 +1,11 @@
-from chalice import Chalice
+from chalice import Blueprint
 
-app = Chalice(app_name="otameshi")
+app_otameshi = Blueprint(__name__)
+
+url_prefix_otameshi = "/otameshi"
 
 
-@app.route("/")
+@app_otameshi.route("/")
 def index():
     return {"hello": "world"}
 
@@ -17,15 +19,15 @@ def index():
 #
 
 
-@app.route("/hello/{name}")
+@app_otameshi.route("/hello/{name}")
 def hello_name(name):
     # '/hello/james' -> {"hello": "james"}
     return {"hello": name}
 
 
-@app.route("/users", methods=["POST"])
+@app_otameshi.route("/users", methods=["POST"])
 def create_user():
     # This is the JSON body the user sent in their POST request.
-    user_as_json = app.current_request.json_body
+    user_as_json = app_otameshi.current_request.json_body
     # We'll echo the json body back to the user in a 'user' key.
     return {"user": user_as_json}
