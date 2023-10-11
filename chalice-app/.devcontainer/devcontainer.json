@@ -25,6 +25,7 @@
       "enableNonRootDocker": "true",
       "moby": "true"
     },
+    "ghcr.io/devcontainers/features/aws-cli": {},
     // Overwrited --------------------------------------------------------------------------------
     // Baseイメージにて、以下のfeature適用済み (mcr.microsoft.com/devcontainers/javascript-node)
     // "ghcr.io/devcontainers/features/common-utils:2"
