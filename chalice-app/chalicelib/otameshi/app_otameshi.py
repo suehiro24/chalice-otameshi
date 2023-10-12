@@ -1,3 +1,4 @@
+import requests
 from chalice import Blueprint
 
 app_otameshi = Blueprint(__name__)
@@ -8,6 +9,18 @@ url_prefix_otameshi = "/otameshi"
 @app_otameshi.route("/")
 def index():
     return {"hello": "world"}
+
+
+@app_otameshi.route("/jsonplaceholder/posts")
+def get_placeholder_posts():
+    """Get a post from an External API (JsonPlaceholder)
+    see: https://jsonplaceholder.typicode.com/
+    """
+    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    if response.ok:
+        return response.json()
+    else:
+        return None
 
 
 # The view function above will return {"hello": "world"}
