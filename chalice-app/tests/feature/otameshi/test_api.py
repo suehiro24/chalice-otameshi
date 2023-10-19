@@ -1,7 +1,7 @@
 from unittest import mock
 
 from chalice.test import Client
-from chalicelib.app import app
+from app import app
 from chalicelib.otameshi.app_otameshi import url_prefix_otameshi
 
 ...
