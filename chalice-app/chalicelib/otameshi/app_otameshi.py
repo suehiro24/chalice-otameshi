@@ -3,7 +3,7 @@ from chalice import Blueprint
 
 app_otameshi = Blueprint(__name__)
 
-url_prefix_otameshi = "/otameshi"
+URL_PREFIX = "/otameshi"
 
 
 @app_otameshi.route("/")

@@ -1,5 +1,5 @@
-from chalice import Blueprint
+from chalice import Blueprint, CognitoUserPoolAuthorizer
 
 app_todo = Blueprint(__name__)
 
-url_prefix_todo = "/todo-app"
+URL_PREFIX = "/todo"
