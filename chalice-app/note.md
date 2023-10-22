@@ -12,9 +12,9 @@ vscode ユーザの DevContainer 内では sudo じゃないと `/usr/local/bin/
 
 ### Export dependences
 
-common: `poetry export -o requirements.txt`
+prod: `poetry export -o requirements.txt`
 
-dev only: `poetry export --with dev -o requirements-dev.txt`
+dev: `poetry export --with dev -o requirements-dev.txt`
 
 ### AWS CLI
 
