@@ -8,6 +8,8 @@ services:
       # Mount the root folder that contains .git
       # see: https://code.visualstudio.com/remote/advancedcontainers/connect-multiple-containers
       - .:/workspaces:cached
+      # AWS-CLI configs to SSO
+      - ~/.aws/config:/home/vscode/.aws/config
     # Overrides default command so things don't shut down after the process ends.
     entrypoint: /usr/local/share/docker-init.sh
     command: sleep infinity
