@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ruff format on Active File",
+      "type": "shell",
+      "command": "ruff format ${file}",
+      // "args": ["${file}"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      },
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      }
+    }
+  ]
+}

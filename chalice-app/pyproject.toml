@@ -10,18 +10,60 @@ python = "^3.10"
 chalice = "^1.29.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.9.1"
 mypy = "^1.5.1"
 pytest = "^7.4.2"
 cfn-lint = "^0.82.1"
 pydot = "^1.4.2"
 boto3-stubs = {extras = ["cognito-idp", "essential"], version = "^1.28.68"}
+ruff = "^0.1.2"
+types-requests = "^2.31.0.10"
 
 [tool.pytest.ini_options]
 markers = [
   "learning: mark a test as a learning test",
 ]
 
+[tool.ruff] # https://github.com/astral-sh/ruff#configuration
+line-length = 100
+select = [
+  # Pyflakes
+  "F",
+  # Pycodestyle errors
+  "E",
+  # Pycodestyle warnings
+  "W",
+  # isort
+  "I",
+  # Flake8 comprehensions
+  "C",
+  # Flake8 bugbear
+  "B",
+]
+ignore = [
+  # The following rules may cause conflicts when used with the formatter
+  # https://github.com/astral-sh/ruff/blob/2d0769e324509e621002ff80b9fc25108f13fd8a/crates/ruff_cli/src/commands/format.rs#L690
+  "COM812", "COM819",
+  "D206",
+  "E501",
+  "ISC001",
+  "Q000", "Q001", "Q002", "Q003",
+  "W191",
+  # The following rules are recommended disabling When using Ruff as a formatter
+  # https://github.com/astral-sh/ruff/blob/2d0769e324509e621002ff80b9fc25108f13fd8a/docs/formatter.md?plain=1#L187
+  "E111",   # indentation-with-invalid-multiple
+  "E114",   # indentation-with-invalid-multiple-comment
+  "E117",   # over-indented
+  "D206",   # indent-with-spaces
+  "D300",   # triple-single-quotes`
+  "Q000",   # bad-quotes-inline-string`
+  "Q001",   # bad-quotes-multiline-string`
+  "Q002",   # bad-quotes-docstring`
+  "Q003",   # avoidable-escaped-quote`
+  "COM812", # missing-trailing-comma`
+  "COM819", # prohibited-trailing-comma`
+  "ISC001", # single-line-implicit-string-concatenation`
+  "ISC002", # multi-line-implicit-string-concatenation`
+]
 
 [build-system]
 requires = ["poetry-core"]
