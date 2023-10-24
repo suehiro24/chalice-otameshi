@@ -1,4 +1,5 @@
 from chalice import Chalice
+
 from chalicelib.otameshi.app_otameshi import URL_PREFIX as OTAMESHI_URL_PREFIX
 from chalicelib.otameshi.app_otameshi import app_otameshi
 from chalicelib.todo.app_todo import URL_PREFIX as TODO_URL_PREFIX
