@@ -3,7 +3,7 @@ from unittest import mock
 from chalice.test import Client
 
 from app import app
-from chalicelib.otameshi.app_otameshi import URL_PREFIX
+from src.otameshi.app_otameshi import URL_PREFIX
 
 
 def test_get_index():
